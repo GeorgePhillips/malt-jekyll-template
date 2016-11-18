@@ -23,8 +23,6 @@ function init_map() {
 }
 
 $(document).ready(function() {
-	google.maps.event.addDomListener(window, 'load', init_map);
-
 	$(".fancybox").fancybox();
 });
 
@@ -34,3 +32,5 @@ $(window).on("load", function() {
 		gutter: 10
 	});
 });
+
+google.maps.event.addDomListener(window, 'load', init_map);

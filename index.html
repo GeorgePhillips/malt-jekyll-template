@@ -1,7 +1,13 @@
 ---
 layout: default
+title: Malt Beer Festival
+start_date_time: 2016-11-10 9:00:00
+end_date_time: 2016-11-10 18:00:00
+timezone: America/Los_Angeles
+timezone_comment: List of valid timezones - https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+description: A fun filled day with friends and beer.
 embed: '<div style="width:100%; text-align:left;"><iframe src="//eventbrite.com/tickets-external?eid=29292309085&ref=etckt" frameborder="0" height="285" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:12px; padding:10px 0 5px; margin:2px; width:100%; text-align:left;" ><a class="powered-by-eb" style="color: #ADB0B6; text-decoration: none;" target="_blank" href="http://www.eventbrite.com/">Powered by Eventbrite</a></div></div>'
-background_image: https://images.unsplash.com/photo-1418995231169-b6d53c7cdbac?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=
+background_image: /images/2015/12.jpeg
 map:
   address: 1 Market Street, San Francisco
   zoom: 16
@@ -72,82 +78,88 @@ photos:
   - image: /images/2015/13.jpeg
     name: Malt Festival 13
 ---
-<h1><img class="logo" src="/images/logo.png" alt="Malt Logo"></h1>
-<h2>Malt Festival - Winter Party</h2>
-<p class="dates">Thursday 10th of November 2016 9am - 6pm
-  <span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
-        <a class="atcb-link">
-            {% include icons/date.svg %}
-        </a>
-        <var class="atc_event">
-            <var class="atc_date_start">2014-05-04 12:00:00</var>
-            <var class="atc_date_end">2014-05-04 18:00:00</var>
-            <var class="atc_timezone">Europe/London</var>
-            <var class="atc_title">Star Wars Day Party</var>
-            <var class="atc_description">May the force be with you</var>
-            <var class="atc_location">Tatooine</var>
-            <var class="atc_organizer">Luke Skywalker</var>
-            <var class="atc_organizer_email">luke@starwars.com</var>
-        </var>
-    </span>
+<h1 class="editable"><img class="logo" src="{{ site.baseurl }}/images/logo.png" alt="Malt Logo"></h1>
+<h2 class="editable">Malt Festival - Winter Party</h2>
+<p class="dates">{{ page.start_date_time | date: "%A %-d of %B %Y %-I%P" }} - {{ page.end_date_time | date: "%-I%P" }}
+	<span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
+	<a class="atcb-link">
+	{% include icons/date.svg %}
+	</a>
+	<var class="atc_event">
+	<var class="atc_date_start">{{ page.start_date_time | date: "%Y-%m-%d %H:%M:%S" }}</var>
+	<var class="atc_date_end">{{ page.end_date_time | date: "%Y-%m-%d %H:%M:%S" }}</var>
+	<var class="atc_timezone">{{ page.timezone }}</var>
+	<var class="atc_title">{{ page.title }}</var>
+	<var class="atc_description">{{ page.description }}</var>
+	<var class="atc_location">{{ page.map.address }}</var>
+	</var>
+	</span>
 </p>
-<p>Malt is an annual festival celebrating the finest craft beer in San Francisco. This year we have over 50 craft beers on tap, food trucks, live music and entertainment. Tickets are available right here for $45. Valid government issued ID required on entry.</p>
+<p class="editable">Malt is an annual festival celebrating the finest craft beer in San Francisco. This year we have over 50 craft beers on tap, food trucks, live music and entertainment. Tickets are available right here for $45. Valid government issued ID required on entry.</p>
 
-<h3>Featured brews</h3>
+<h3 class="editable">Featured brews</h3>
 <div class="gallery">
-  {% for feature in page.featured %}
-    <a href="{{ feature.link }}">
-      <img src="{{ feature.image }}" alt="{{ feature.name }}">
-      <p class="caption">{{ feature.name }}</p>
-    </a>
-  {% endfor %}
+	{% for feature in page.featured %}
+		<a href="{{ feature.link }}">
+			<div class="inner-wrapper">
+				<img src="{{ site.baseurl }}{{ feature.image }}" alt="{{ feature.name }}">
+			</div>
+			<p class="caption">{{ feature.name }}</p>
+	</a>
+	{% endfor %}
 </div>
 
-<h3>Get your tickets</h3>
+<h3 class="editable">Get your tickets</h3>
 {{ page.embed }}
 
-<h3>Tell your friends</h3>
+<h3 class="editable">Tell your friends</h3>
 <div class="sharing">
-  <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}">{% include icons/social-media.html social_icon="facebook" %}</a>
-  <a class="twitter" href="https://twitter.com/home?status={{ "I'm going to this event " | append: site.url | append: page.url | url_encode }}">{% include icons/social-media.html social_icon="twitter" %}</a>
-  <a class="google-plus" href="https://plus.google.com/share?url={ site.url }}{{ page.url }}">{% include icons/social-media.html social_icon="google-plus" %}</a>
-  <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url | append: page.url | url_encode }}">{% include icons/social-media.html social_icon="linkedin" %}</a>
-  <a class="email" href="mailto:?&subject=I'm going to this event&body=Check%20it%20out%20-%20{{ site.url | append: page.url | url_encode }}">{% include icons/social-media.html social_icon="email" %}</a>
+	<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}">{% include icons/social-media.html social_icon="facebook" %}</a>
+	<a class="twitter" href="https://twitter.com/home?status={{ "I'm going to this event " | append: site.url | append: site.base_url | append: page.url | url_encode }}">{% include icons/social-media.html social_icon="twitter" %}</a>
+	<a class="google-plus" href="https://plus.google.com/share?url={ site.url }}{{ site.base_url }}{{ page.url }}">{% include icons/social-media.html social_icon="google-plus" %}</a>
+	<a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url | append: site.base_url | append: page.url | url_encode }}">{% include icons/social-media.html social_icon="linkedin" %}</a>
+	<a class="email" href="mailto:?&subject=I'm going to this event&body=Check%20it%20out%20-%20{{ site.url | append: site.base_url | append: page.url | url_encode }}">{% include icons/social-media.html social_icon="email" %}</a>
 </div>
 
-<h3>Location</h3>
+<h3 class="editable">Location</h3>
 <address><a href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{% include icons/place.svg %} {{ page.map.address }}</a></address>
 <div class="map" id="gmap_canvas"></div>
 
 
-<h3>Photos from 2015</h3>
+<h3 class="editable">Photos from 2015</h3>
 
 <div class="grid">
-  {% for photo in page.photos %}
-    <div class="grid-item"><a class="fancybox" rel="group" href="{{ photo.image }}"><img src="{{ photo.image }}" alt="{{ photo.name }}"/></a></div>
-  {% endfor %}
+	{% for photo in page.photos %}
+	<div class="grid-item"><a class="fancybox" rel="group" href="{{ site.baseurl }}{{ photo.image }}"><img src="{{ site.baseurl }}{{ photo.image }}" alt="{{ photo.name }}"/></a></div>
+	{% endfor %}
 </div>
 
-<h3>Contact</h3>
-<p style="text-align: center;">Send us a message with any questions about sponsoring the event, tickets or anything else.</p>
+<h3 class="editable">Contact</h3>
+<p style="text-align: center;" class="editable">Send us a message with any questions about sponsoring the event, tickets or anything else.</p>
 
-<form method="post" action="/success.html">
-  <label for="email_address">Email Address</label>
-  <input id="email_address" type="text" name="email">
+<form method="post" action="{{ site.baseurl }}/success.html">
+	<label for="email_address">Email Address</label>
+	<input id="email_address" type="text" name="email">
 
-  <label for="name">Name</label>
-  <input id="name" type="text" name="name">
+	<label for="name">Name</label>
+	<input id="name" type="text" name="name">
 
-  <label for="message">Message</label>
-  <textarea id="message" name="message"></textarea>
+	<label for="message">Message</label>
+	<textarea id="message" name="message"></textarea>
 
-  <input type="hidden" name="_to" value="contact@example.com">
-  <input type="text" name="_gotcha" style="display: none;">
+	<input type="hidden" name="_to" value="contact@example.com">
+	<input type="text" name="_gotcha" style="display: none;">
 
-  <input type="submit" value="Send Message">
+	<input type="submit" value="Send Message">
 </form>
+
+<p class="copyright">
+	<a href="https://cloudcannon.com/">
+		Template by CloudCannon
+	</a>
+</p>
 
 <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
 <script type='text/javascript'>
-  window.mapData = {{ page.map | jsonify }};
+	window.mapData = {{ page.map | jsonify }};
 </script>
