@@ -30,11 +30,11 @@ top: 7px;
 .atcb-link:focus~ul,
 .atcb-link:active~ul,
 .atcb-list:hover {
-	visibility:visible;
+	display: inline-block;
 }
 
 .atcb-list {
-	visibility: hidden;
+	display: none;
 	position: absolute;
 	top: 100%;
 	left: 0;

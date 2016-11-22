@@ -78,6 +78,7 @@ photos:
   - image: /images/2015/13.jpeg
     name: Malt Festival 13
 ---
+<p class="success">Your message is sent, we'll be in touch soon</p>
 <h1 class="editable"><img class="logo" src="{{ site.baseurl }}/images/logo.png" alt="Malt Logo"></h1>
 <h2 class="editable">Malt Festival - Winter Party</h2>
 <p class="dates">{{ page.start_date_time | date: "%A %-d of %B %Y %-I%P" }} - {{ page.end_date_time | date: "%-I%P" }}
@@ -137,7 +138,7 @@ photos:
 <h3 class="editable">Contact</h3>
 <p style="text-align: center;" class="editable">Send us a message with any questions about sponsoring the event, tickets or anything else.</p>
 
-<form method="post" action="{{ site.baseurl }}/success.html">
+<form method="post" action="{{ site.baseurl }}/index.html?submit=success">
 	<label for="email_address">Email Address</label>
 	<input id="email_address" type="text" name="email">
 

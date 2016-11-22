@@ -8,6 +8,10 @@ html {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	min-width: 380px;
+}
+
+html, textarea {
 	font-family: 'Abel', sans-serif;
 }
 
@@ -16,7 +20,7 @@ body {
 	margin: 100px auto 0 auto;
 	text-shadow: 1px 1px 1px rgba(64, 64, 64, 0.5);
 	color: #fff;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 h1, h2, h3, .dates {

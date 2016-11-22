@@ -46,6 +46,7 @@ h1 img.logo {
 
 		.inner-wrapper {
 			padding: 0 40px;
+			margin: 0 auto;
 		}
 
 		@media #{$tablet} {
@@ -59,6 +60,7 @@ h1 img.logo {
 
 		img {
 			width: 100%;
+			max-width: 200px;
 		}
 
 		&:hover {
@@ -68,6 +70,7 @@ h1 img.logo {
 		.caption {
 			position: absolute;
 			bottom: -45px;
+			left: 0;
 			text-align: center;
 			width: 100%;
 		}
@@ -146,4 +149,11 @@ h1 img.logo {
 .copyright {
 	text-align: center;
 	font-size: .9em;
+}
+
+.success {
+	background: #1ddd8b;
+	padding: 10px;
+	text-shadow: none;
+	display: none;
 }
