@@ -1,6 +1,6 @@
 # Malt
 
-Event themed template for Jekyll. Browse through a [live demo](#TODO).
+Event themed template for Jekyll. Browse through a [live demo](https://whispering-boat.cloudvent.net/).
 Increase the web presence of your event with this configurable theme.
 
 ![Malt](images/_screenshot.jpg)
