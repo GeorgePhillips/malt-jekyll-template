@@ -79,7 +79,7 @@ photos:
     name: Malt Festival 13
 ---
 <p class="success">Your message is sent, we'll be in touch soon</p>
-<h1 class="editable"><img class="logo" src="{{ site.baseurl }}/images/logo.png" alt="Malt Logo"></h1>
+<h1><img class="logo" src="/images/logo.png" alt="Malt Logo"></h1>
 <h2 class="editable">Malt Festival - Winter Party</h2>
 <p class="dates">{{ page.start_date_time | date: "%A %-d of %B %Y %-I%P" }} - {{ page.end_date_time | date: "%-I%P" }}
 	<span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
@@ -101,9 +101,9 @@ photos:
 <h3 class="editable">Featured brews</h3>
 <div class="gallery">
 	{% for feature in page.featured %}
-		<a href="{{ feature.link }}">
+		<a href="{% include relative-src.html src=feature.link %}">
 			<div class="inner-wrapper">
-				<img src="{{ site.baseurl }}{{ feature.image }}" alt="{{ feature.name }}">
+				<img src="{% include relative-src.html src=feature.image %}" alt="{{ feature.name }}">
 			</div>
 			<p class="caption">{{ feature.name }}</p>
 	</a>
@@ -131,7 +131,7 @@ photos:
 
 <div class="grid">
 	{% for photo in page.photos %}
-	<div class="grid-item"><a class="fancybox" rel="group" href="{{ site.baseurl }}{{ photo.image }}"><img src="{{ site.baseurl }}{{ photo.image }}" alt="{{ photo.name }}"/></a></div>
+	<div class="grid-item"><a class="fancybox" rel="group" href="{% include relative-src.html src=photo.image %}"><img src="{% include relative-src.html src=photo.image %}" alt="{{ photo.name }}"/></a></div>
 	{% endfor %}
 </div>
 
