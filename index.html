@@ -1,55 +1,66 @@
 ---
 layout: default
 title: Malt Beer Festival
-start_date_time: 2016-11-10 9:00:00
-end_date_time: 2016-11-10 18:00:00
+start_date_time: '9:00 am'
+end_date_time: '6:00 pm'
 timezone: America/Los_Angeles
-timezone_comment: List of valid timezones - https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone_comment: >-
+  List of valid timezones -
+  https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 description: A fun filled day with friends and beer.
-embed: '<div style="width:100%; text-align:left;"><iframe src="//eventbrite.com/tickets-external?eid=29292309085&ref=etckt" frameborder="0" height="285" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:12px; padding:10px 0 5px; margin:2px; width:100%; text-align:left;" ><a class="powered-by-eb" style="color: #ADB0B6; text-decoration: none;" target="_blank" href="http://www.eventbrite.com/">Powered by Eventbrite</a></div></div>'
+embed: >-
+  <div style="width:100%; text-align:left;"><iframe
+  src="//eventbrite.com/tickets-external?eid=29292309085&ref=etckt"
+  frameborder="0" height="285" width="100%" vspace="0" hspace="0"
+  marginheight="5" marginwidth="5" scrolling="auto"
+  allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial;
+  font-size:12px; padding:10px 0 5px; margin:2px; width:100%; text-align:left;"
+  ><a class="powered-by-eb" style="color: #ADB0B6; text-decoration: none;"
+  target="_blank" href="http://www.eventbrite.com/">Powered by
+  Eventbrite</a></div></div>
 background_image: /images/2015/12.jpeg
 map:
-  address: 1 Market Street, San Francisco
+  address: '1 Market Street, San Francisco'
   zoom: 16
   latitude: 37.7938462
   longitude: -122.3970253
 featured:
-  - image: /images/beers/label-1.png
-    name: Count Chocula
-    link: #
   - image: /images/beers/label-2.png
     name: Professor Pope
-    link: #
+    link:
+  - image: /images/beers/label-1.png
+    name: Count Chocula
+    link:
   - image: /images/beers/label-3.png
     name: Blazing Dog
-    link: #
+    link:
   - image: /images/beers/label-4.png
     name: Extravagant Bartender
-    link: #
+    link:
   - image: /images/beers/label-5.png
     name: Brain Sour
-    link: #
+    link:
   - image: /images/beers/label-6.png
     name: Chinchilla
-    link: #
+    link:
   - image: /images/beers/label-7.png
     name: Frosty Boots
-    link: #
+    link:
   - image: /images/beers/label-8.png
     name: Grape Pirate
-    link: #
+    link:
   - image: /images/beers/label-9.png
     name: Orange Tank
-    link: #
+    link:
   - image: /images/beers/label-10.png
     name: Orange Tank
-    link: #
+    link:
   - image: /images/beers/label-11.png
     name: Kangaroo
-    link: #
+    link:
   - image: /images/beers/label-12.png
     name: CloudCannon
-    link: #
+    link:
 photos:
   - image: /images/2015/1.jpeg
     name: Malt Festival 1
@@ -77,9 +88,12 @@ photos:
     name: Malt Festival 12
   - image: /images/2015/13.jpeg
     name: Malt Festival 13
+  - image:
+    name:
 ---
+
 <p class="success">Your message is sent, we'll be in touch soon</p>
-<h1><img class="logo" src="/images/logo.png" alt="Malt Logo"></h1>
+<h1><img class="logo" src="/images/logo.png" alt="Malt Logo" /></h1>
 <h2 class="editable">Malt Festival - Winter Party</h2>
 <p class="dates">{{ page.start_date_time | date: "%A %-d of %B %Y %-I%P" }} - {{ page.end_date_time | date: "%-I%P" }}
 	<span class="addtocalendar atc-style-button-icon atc-style-menu-wb">
@@ -96,14 +110,16 @@ photos:
 	</var>
 	</span>
 </p>
-<p class="editable">Malt is an annual festival celebrating the finest craft beer in San Francisco. This year we have over 50 craft beers on tap, food trucks, live music and entertainment. Tickets are available right here for $45. Valid government issued ID required on entry.</p>
+<p class="editable">
+	Malt festival is long gone
+</p>
 
 <h3 class="editable">Featured brews</h3>
 <div class="gallery">
 	{% for feature in page.featured %}
 		<a href="{% include relative-src.html src=feature.link %}">
 			<div class="inner-wrapper">
-				<img src="{% include relative-src.html src=feature.image %}" alt="{{ feature.name }}">
+				<img src="{% include relative-src.html src=feature.image %}" alt="{{ feature.name }}" />
 			</div>
 			<p class="caption">{{ feature.name }}</p>
 	</a>
@@ -131,7 +147,7 @@ photos:
 
 <div class="grid">
 	{% for photo in page.photos %}
-	<div class="grid-item"><a class="fancybox" rel="group" href="{% include relative-src.html src=photo.image %}"><img src="{% include relative-src.html src=photo.image %}" alt="{{ photo.name }}"/></a></div>
+	<div class="grid-item"><a class="fancybox" rel="group" href="{% include relative-src.html src=photo.image %}"><img src="{% include relative-src.html src=photo.image %}" alt="{{ photo.name }}" /></a></div>
 	{% endfor %}
 </div>
 
@@ -140,18 +156,18 @@ photos:
 
 <form method="post" action="{{ site.baseurl }}/index.html?submit=success">
 	<label for="email_address">Email Address</label>
-	<input id="email_address" type="text" name="email">
+	<input id="email_address" type="text" name="email" />
 
 	<label for="name">Name</label>
-	<input id="name" type="text" name="name">
+	<input id="name" type="text" name="name" />
 
 	<label for="message">Message</label>
 	<textarea id="message" name="message"></textarea>
 
-	<input type="hidden" name="_to" value="contact@example.com">
-	<input type="text" name="_gotcha" style="display: none;">
+	<input type="hidden" name="_to" value="contact@example.com" />
+	<input type="text" name="_gotcha" style="display: none;" />
 
-	<input type="submit" value="Send Message">
+	<input type="submit" value="Send Message" />
 </form>
 
 <p class="copyright">
